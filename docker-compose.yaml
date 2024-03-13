@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  credit-db:
+    image: postgres:14.2
+    restart: always
+    environment:
+      POSTGRES_DB: credit_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+      - ./postgresql:/docker-entrypoint-initdb.d
+    networks:
+      - default
+networks:
+  default: null

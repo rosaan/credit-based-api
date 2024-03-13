@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "strict": true,
+    "types": ["vitest/globals"],
+    "skipLibCheck": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "src/tests", "vite.config.ts"]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "credit",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "ts-node-dev -r dotenv/config src/index.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node -r dotenv/config dist/index.js",
+    "generate:migration": "drizzle-kit generate:pg",
+    "migrate": "ts-node -r dotenv/config src/db/migrate",
+    "migrate:prod": "ts-node -r dotenv/config dist/db/migrate",
+    "seed": "ts-node -r dotenv/config src/db/seed",
+    "seed:prod": "ts-node -r dotenv/config dist/db/seed",
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "generate:secret": "node -e \"console.log(require('crypto').randomBytes(64).toString('hex'))\""
+  },
+  "dependencies": {
+    "argon2": "^0.40.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.1",
+    "drizzle-zod": "^0.5.1",
+    "express": "^4.18.3",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "node-cache": "^5.1.2",
+    "postgres": "^3.4.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/body-parser": "^1.19.5",
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.26",
+    "@types/supertest": "^6.0.2",
+    "drizzle-kit": "^0.20.14",
+    "supertest": "^6.3.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.2",
+    "vitest": "^1.3.1"
+  }
+}
